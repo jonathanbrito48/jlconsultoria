@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+:root {
+    --bs-border-width: 0px;
+}
+
 body {
     max-width: 100%;
     max-height: 100%;
@@ -46,9 +50,20 @@ body {
     white-space: pre-line;
 }
 
+.row {
+    padding-bottom: 20px;
+}
+
+.card {
+    border: none !important;
+    box-shadow:0 0 10px 3px #142b43;
+    border-radius: 10px !important;
+}
 
 .card img {
     width: auto;
+    border-radius: 10px !important;
+    
 }
 
 @media (max-width: 1024px) {
