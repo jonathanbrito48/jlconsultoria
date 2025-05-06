@@ -63,7 +63,51 @@ body {
 .card img {
     width: auto;
     border-radius: 10px !important;
-    
+    height: 27.5vw;
+    object-fit: cover;    
+}
+
+.hover-card {
+    background-color: #142b4300;
+    color: white;
+    width: 100%;
+    height: 27.5vw;
+    border-radius: 10px !important;
+    position: relative;
+    top: -27.5vw;
+    display:inline-block;
+    align-items: end;
+    align-content: end;
+}
+
+.hover-card h3 {
+    padding-inline-start: 2vw;
+}
+
+.hover-card:hover {
+    background-color: #142b438a;
+    transition-duration: 1000ms;
+}
+
+@keyframes suavizacao_H3 {
+    0% {
+        height: 0%;
+      }
+    100% {
+        height: 50%; 
+      }
+}
+
+.hover-card p {
+    display: none;
+}
+
+.hover-card:hover p {
+    display: block;
+    height: 50%;
+    padding-inline: 2vw;
+    animation: suavizacao_H3 1000ms ease-in-out forwards;
+    text-align: justify;
 }
 
 @media (max-width: 1024px) {
