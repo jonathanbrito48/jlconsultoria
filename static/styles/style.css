@@ -7,7 +7,8 @@
 :root {
     --bs-border-width: 0px;
     --font-default:"Ubuntu", sans-serif;
-    --color-logo: #2BAAB0
+    --color-logo: #2BAAB0;
+    --color-default-1:#142b43; 
 }
 
 body {
@@ -74,7 +75,8 @@ body {
 
 .botao-cta {
     background-color: var(--color-logo);
-    color: white;
+    color: var(--color-default-1);
+    text-shadow: 0px 0px 15px var(--color-default-1);
     font-size: 1.5vw;
     font-weight: 700;
     text-decoration: none;
@@ -148,15 +150,52 @@ body {
 }
 
 @media (max-width: 1024px) {
-    .navbar {
+    .navbar img {
         display: none;
     }
 
-    .container {
-        display: none;
+    .navbar {
+        background-color: var(--color-default-1);
+        height: 80vh;
     }
-    .navbar img {
-        display: none;
+
+    .container {
+        width: auto;
+        height: auto;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .container a {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        align-self: center;
+    }
+    
+    .container img {
+        width: 17vw;
+        justify-self: center;
+        display: block !important;
+        left: auto;
+    }
+
+    .container h1 {
+        width: 100%;
+        font-size: 7vh;
+        text-align: center;
+    }
+
+    .container p {
+        width: 100%;
+    }
+
+    .botao-cta {
+        position:static;
+        font-size: 4vh;
+        padding: 1.5vh;
     }
 
     .col {
