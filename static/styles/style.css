@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +18,7 @@ body {
     font-family: var(--font-default);
 }
 
-.navbar {
+.hero {
     background-color: #142b4300;
     display: block;
     justify-content: start;
@@ -27,8 +28,7 @@ body {
     height: 40vw;
 } 
 
-.navbar img {
-    width: 100%;
+.hero img {
     padding: 0;
     margin: 0;
 }
@@ -53,6 +53,13 @@ body {
     font-size: 3vw;
     width: 50%;
     white-space: pre-line;
+    font-weight: 700;
+}
+.container h2 {
+    color: white;
+    font-size: 1.5vw;
+    font-weight: 800;
+    font-family: "Roboto Serif", serif;
 }
 
 .container p {
@@ -88,8 +95,27 @@ body {
     top: 2vw;
 }
 
-.row {
+/* .row {
     padding-bottom: 20px;
+} */
+
+.row {
+    background-color: white;
+    padding-block-end: 1vw;
+    border-radius: 20px;
+}
+
+hr.vertical.dark {
+    background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.4),transparent);
+}
+
+hr.vertical {
+    position: absolute;
+    background-color: transparent;
+    height: 100%;
+    right: 0;
+    top: 0;
+    width: 1px;
 }
 
 .card {
@@ -119,8 +145,9 @@ body {
 }
 
 .hover-card h3 {
-    padding-inline-start: 2vw;
+    padding-inline: 2vw;
     font-family: var(--font-default);
+    font-size: 1.5vw;
 }
 
 .hover-card:hover {
@@ -133,28 +160,37 @@ body {
         height: 0%;
       }
     100% {
-        height: 50%; 
+        height:50%; 
       }
 }
 
 .hover-card p {
     display: none;
+    white-space: pre-line;
+    
+}
+
+.hover-card p a {
+    
+    color: white;
+    font-weight: 100;
+    font-size: small;
 }
 
 .hover-card:hover p {
     display: block;
     padding-inline: 2vw;
     font-family: var(--font-default);
-    animation: suavizacao_H3 1000ms ease-in-out forwards;
+    animation: suavizacao_H3 500ms ease-in-out forwards;
     text-align: justify;
 }
 
 @media (max-width: 1024px) {
-    .navbar img {
+    .hero img {
         display: none;
     }
 
-    .navbar {
+    .hero {
         background-color: var(--color-default-1);
         height: 80vh;
     }
@@ -184,17 +220,18 @@ body {
 
     .container h1 {
         width: 100%;
-        font-size: 7vh;
+        font-size: 7vw;
         text-align: center;
     }
 
     .container p {
         width: 100%;
+        font-size: 4.5vw;
     }
 
     .botao-cta {
         position:static;
-        font-size: 4vh;
+        font-size: 5vw;
         padding: 1.5vh;
     }
 
