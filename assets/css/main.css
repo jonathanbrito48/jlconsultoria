@@ -1201,6 +1201,21 @@ section,
   color: var(--accent-color);
 }
 
+.services .nav-link:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.services .nav-link.active {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+}
+
+.services .nav-link.active h4 {
+  color: var(--contrast-color);
+}
+
 .services .service-item .title {
   font-weight: 700;
   margin-bottom: 15px;
@@ -1209,6 +1224,24 @@ section,
 
 .services .service-item .title a {
   color: var(--heading-color);
+}
+
+.services .nav-link i {
+  padding-right: 15px;
+  font-size: 28px;
+}
+
+.services .nav-link {
+  color: var(--heading-color);
+  border: 2px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  padding: 15px 20px;
+  transition: 0.3s;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 90%;
 }
 
 .services .service-item .description {
