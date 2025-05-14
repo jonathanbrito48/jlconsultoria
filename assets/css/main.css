@@ -1027,6 +1027,7 @@ section,
 }
 
 .about .content p {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
   margin-bottom: 30px;
 }
 
