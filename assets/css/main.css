@@ -22,7 +22,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #142b43; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #142b43; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #e03a3c; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #2EA7B0; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -530,6 +530,38 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+
+.footer .btn-getstarted,
+.footer .btn-getstarted:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 14px;
+  padding: 8px 25px;
+  margin: 0 0 0 0px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.footer .btn-getstarted:hover,
+.footer .btn-getstarted:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+@media (max-width: 1200px) {
+  .footer .logo {
+    order: 1;
+  }
+
+  .footer .btn-getstarted,
+  .tabs .btn-getstarted:focus {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+
+}
+
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -576,6 +608,7 @@ h6 {
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 16px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
+  cursor: pointer;
   margin-right: 10px;
   transition: 0.3s;
 }
@@ -1035,6 +1068,7 @@ section,
 .about .icon-box h4 a {
   color: var(--heading-color);
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .about .icon-box p {
@@ -1095,6 +1129,37 @@ section,
 /*--------------------------------------------------------------
 # Tabs Section
 --------------------------------------------------------------*/
+
+.tabs .btn-getstarted,
+.tabs .btn-getstarted:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 14px;
+  padding: 8px 25px;
+  margin: 0 0 0 0px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.tabs .btn-getstarted:hover,
+.tabs .btn-getstarted:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+@media (max-width: 1200px) {
+  .tabs .logo {
+    order: 1;
+  }
+
+  .tabs .btn-getstarted,
+  .tabs .btn-getstarted:focus {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+
+}
 .tabs .nav-tabs {
   border: 0;
 }
@@ -1188,6 +1253,30 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.services .about-btn {
+  padding: 8px 30px 9px 30px;
+  color: var(--default-color);
+  border-radius: 50px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  border: 2px solid var(--accent-color);
+}
+
+.services .about-btn i {
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+.services .about-btn:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
 .services .service-item {
   background-color: var(--surface-color);
   padding: 30px;
@@ -1252,6 +1341,77 @@ section,
 
 .services .service-item:hover {
   background-color: color-mix(in srgb, var(--surface-color) 90%, white 5%);
+}
+
+/*********************/
+/*     Details 2     */
+/*********************/
+.basic-3 {
+	position: relative;
+	overflow: hidden;
+  padding-bottom: 2rem;
+  font-family: var(--default-font);
+  height: 100%;
+}
+
+.basic-3 div[class*="col"] {  
+	/* selects all elements which have classes starting with col */
+	/* needed so that the absolute positioned decoration stays behind */
+	position: relative;
+}
+
+.basic-3 .text-container {
+	margin-bottom: 5rem;
+  font-family: var(--default-font);
+}
+
+.basic-3 h2 {
+	margin-bottom: 1.875rem;
+  font-family: var(--default-font);
+}
+
+.basic-3 p {
+  font-family: var(--default-font);
+	margin-bottom: 2rem;
+}
+
+.basic-3 .btn-solid-reg {
+	display: inline-block;
+	padding: 1.375rem 2.25rem 1.375rem 2.25rem;
+	border: 1px solid var(--accent-color);
+	border-radius: 30px;
+	background-color: var(--contrast-color);
+	color: var(--accent-color);
+	font-weight: 600;
+	font-size: 0.875rem;
+	line-height: 0;
+	text-decoration: none;
+	transition: all 0.2s;
+}
+
+.basic-3 .btn-solid-reg:hover {
+	background-color: var(--accent-color);
+	color: var(--contrast-color); /* needs to stay here because of the color property of a tag */
+	text-decoration: none;
+}
+
+.basic-3 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.basic-3 ul li {
+  padding-bottom: 10px;
+}
+
+.basic-3 ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: var(--accent-color);
+}
+
+.basic-3 p:last-child {
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
