@@ -1835,6 +1835,53 @@ section,
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
+
+.site-section .social a {
+  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: color-mix(in srgb, var(--contrast-color), transparent 20%);
+  margin: 0 3px;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  transition: ease-in-out 0.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-section .social a:hover {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
+.site-section .social i {
+  font-size: 18px;
+  line-height: 0;
+}
+
+
+.site-section {
+  padding: 5em 0; }
+
+.section-heading {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 10; }
+  .section-heading h2 {
+    position: relative;
+    font-weight: 200;
+    padding-top: 20px;
+    font-size: 30px; }
+    .section-heading h2 strong {
+      font-weight: 800; }
+  .section-heading.text-center h2:before {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); }
+
+
+
 .team .team-member {
   background-color: var(--surface-color);
   overflow: hidden;
@@ -1844,6 +1891,11 @@ section,
 }
 
 .team .team-member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.site-section .member-img {
   position: relative;
   overflow: hidden;
 }
