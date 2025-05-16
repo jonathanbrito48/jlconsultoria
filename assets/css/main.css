@@ -1415,6 +1415,30 @@ section,
   margin-bottom: 0;
 }
 
+.about-2 .about-btn {
+  padding: 8px 30px 9px 30px;
+  color: var(--default-color);
+  border-radius: 50px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  border: 2px solid var(--accent-color);
+}
+
+.about-2 .about-btn i {
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+.about-2 .about-btn:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
