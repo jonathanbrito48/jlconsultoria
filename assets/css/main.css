@@ -89,8 +89,10 @@ h6 {
 
 /* PHP Email Form Messages
 ------------------------------*/
+
+
 .php-email-form .error-message {
-  display: none;
+  display: none !important;
   background: #df1529;
   color: #ffffff;
   text-align: left;
@@ -127,6 +129,16 @@ h6 {
   border: 3px solid var(--accent-color);
   border-top-color: var(--surface-color);
   animation: php-email-form-loading 1s linear infinite;
+}
+
+.error-message {
+  /* display: none !important; */
+  background: #FFF0F0;
+  border-left: 4px solid #FF3B3B;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9em;
 }
 
 @keyframes php-email-form-loading {

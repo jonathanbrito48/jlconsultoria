@@ -1321,37 +1321,86 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-              data-aos-delay="500">
+            <form id="myForm" action="https://formspree.io/f/xkgrejvj" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
               <div class="row gy-4">
-
+                <!-- Seus campos do formulário (mantidos iguais) -->
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Seu Nome" required="">
+                  <input type="text" name="name" class="form-control" placeholder="Seu Nome" required>
                 </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Seu Email" required="">
+                
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Seu Email" required>
                 </div>
-
+                
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Assunto" required="">
+                  <input type="text" class="form-control" name="subject" placeholder="Assunto" required>
                 </div>
-
+                
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="4" placeholder="Mensagem" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="4" placeholder="Mensagem" required></textarea>
                 </div>
-
+                
                 <div class="col-md-12 text-center">
                   <div class="loading">Carregando</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Sua Menssagem foi enviada. Obridado!</div>
-
+                  <div class="error-message">Erro ao enviar mensagem</div>
+                  <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
+                  
                   <button type="submit">Enviar Mensagem</button>
                 </div>
-
               </div>
             </form>
-          </div><!-- End Contact Form -->
+          </div>
+          
+          <script>
+            document.getElementById('myForm').addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              const form = e.target;
+              const loading = form.querySelector('.loading');
+              const errorMessage = form.querySelector('.error-message');
+              const sentMessage = form.querySelector('.sent-message');
+              
+              // Estado inicial
+              loading.style.display = 'block';
+              errorMessage.style.display = 'none';
+              sentMessage.style.display = 'none';
+              errorMessage.textContent = '';
+
+              // 1. Usando XMLHttpRequest para controle total
+              const xhr = new XMLHttpRequest();
+              xhr.open('POST', form.action);
+              xhr.setRequestHeader('Accept', 'application/json');
+              
+              // 2. Interceptador de resposta (ignora completamente o conteúdo)
+              xhr.onload = function() {
+                if (xhr.status === 422) {
+                  errorMessage.style.display = 'block';
+                  errorMessage.textContent = 'Por favor, preencha todos os campos marcados como obrigatórios.';
+                } 
+                else if (xhr.status >= 200 && xhr.status < 300) {
+                  sentMessage.style.display = 'block';
+                  form.reset();
+                }
+                else {
+                  errorMessage.style.display = 'block';
+                  errorMessage.textContent = 'Não foi possível enviar sua mensagem. Tente novamente.';
+                }
+              };
+              
+              // 3. Tratamento de erro de rede
+              xhr.onerror = function() {
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Erro de conexão. Verifique sua internet.';
+              };
+              
+              xhr.send(new FormData(form));
+              
+              // 4. Garante que o loading some
+              xhr.onloadend = function() {
+                loading.style.display = 'none';
+              };
+            });
+          </script>
 
         </div>
 
