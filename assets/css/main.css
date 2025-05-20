@@ -132,7 +132,7 @@ h6 {
 }
 
 .error-message {
-  /* display: none !important; */
+  display: none;
   background: #FFF0F0;
   border-left: 4px solid #FF3B3B;
   padding: 12px;
@@ -2048,6 +2048,7 @@ section,
 
 .contact .php-email-form input[type=text],
 .contact .php-email-form input[type=email],
+.contact .php-email-form input[type=tel],
 .contact .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
@@ -2060,14 +2061,26 @@ section,
 
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
+.contact .php-email-form input[type=tel]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
 }
 
 .contact .php-email-form input[type=text]::placeholder,
 .contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form input[type=tel]::placeholder,
 .contact .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.form-check-input:checked {
+  background-color: var(--accent-color); /* Cor azul do Bootstrap */
+  border-color: var(--default-color);
+}
+
+.form-check-label {
+  margin-left: 5px;
+  user-select: none;
 }
 
 .contact .php-email-form button[type=submit] {
