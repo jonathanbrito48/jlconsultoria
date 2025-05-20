@@ -768,6 +768,81 @@ h6 {
   opacity: 1;
 }
 
+
+.botton-wpp {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: 65px;
+  right: 15px;
+  background-color: var(--accent-color);
+  color: #FFF;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.botton-wpp i {
+  color: var(--contrast-color);
+  transition: all 0.3s ease;
+}
+
+.botton-wpp span {
+  display: none;
+  opacity: 0;
+  margin-left: 10px;
+  font-size: 16px;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  padding-right: 15px;
+}
+
+.botton-wpp:hover {
+  width: auto;
+  height: 40px;
+  padding:10px;
+  border-radius: 4px;
+  color: var(--contrast-color);
+}
+
+.botton-wpp:hover i {
+  font-size: 24px;
+}
+
+.botton-wpp:hover span {
+  display: inline-block;
+  opacity: 1;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Efeito de pulsação para chamar atenção */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.botton-wpp {
+  animation: pulse 2s infinite;
+}
+
+.botton-wpp:hover {
+  animation: none;
+}
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
